@@ -10,6 +10,8 @@ const Login: React.FC = () => {
       className="flex items-center justify-center min-h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: `url(${ll})` }}
     >
+  
+
       {/* Inner Content (scaled down further) */}
       <div className="transform scale-75 md:scale-85 flex flex-col items-center w-full">
         {/* Slogan Section */}

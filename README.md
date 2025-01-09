@@ -1,3 +1,6 @@
+custon access garni code :
+className=font-dm text-custom-36 font-bold
+yesari
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
