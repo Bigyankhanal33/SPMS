@@ -5,8 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        dm: ['"DM Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'custom-36': '36px',
+      },
+      fontWeight: {
+        bold: '700',
+      },
+    },
   },
   plugins: [],
 }
-
