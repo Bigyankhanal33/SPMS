@@ -18,11 +18,11 @@ const UserDetailPage: React.FC = () => {
   const users: User[] = [...Array(10)].map((_, index) => ({
     id: index + 1,
     name: `User ${index + 1}`,
-    faculty: "BIM",
-    fatherName: `Father ${index + 1}`,
-    phone: `98072695${index + 20}`,
+    faculty: `Faculty ${index + 1}`,
+    fatherName: `Father Name ${index + 1}`,
+    phone: `98072695${index + 10}`,
     email: `user${index + 1}@example.com`,
-    image: `https://randomuser.me/api/portraits/men/${index + 1}.jpg`, // Unique dummy image URL
+    image: `https://randomuser.me/api/portraits/men/${index + 1}.jpg`,
   }));
 
   // Find the user based on the ID
@@ -128,7 +128,7 @@ const UserDetailPage: React.FC = () => {
           {activeTab === "academic" && (
             <div>
               <h3 className="font-bold mb-2">Academic Details</h3>
-              <p>Section: {academicData.course}</p>
+              <p>Course: {academicData.course}</p>
               <p>GPA: {academicData.gpa}</p>
               <p>Joined: {academicData.joined}</p>
               <p>Ended: {academicData.ended}</p>
@@ -140,7 +140,7 @@ const UserDetailPage: React.FC = () => {
           {activeTab === "cca" && (
             <div>
               <h3 className="font-bold mb-2">CCA/ECA Activities</h3>
-              <p>Activities: {ccaData.activities}</p>
+              <p>{ccaData.activities}</p>
               <p>Awards: {ccaData.awards}</p>
             </div>
           )}
