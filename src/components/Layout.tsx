@@ -26,7 +26,7 @@ const Layout: React.FC = () => {
   };
 
   // Get the title based on the current route
-  const currentTitle = routeTitles[location.pathname] || "Welcome";
+  const currentTitle = routeTitles[location.pathname];
 
   return (
     <div className="flex h-screen bg-gray-100">

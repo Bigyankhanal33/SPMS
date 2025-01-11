@@ -22,7 +22,7 @@ const UserDetailPage: React.FC = () => {
     fatherName: `Father ${index + 1}`,
     phone: `98072695${index + 20}`,
     email: `user${index + 1}@example.com`,
-    image: "https://via.placeholder.com/150", // Larger dummy image URL
+    image: `https://randomuser.me/api/portraits/men/${index + 1}.jpg`, // Unique dummy image URL
   }));
 
   // Find the user based on the ID
@@ -164,7 +164,8 @@ const UserDetailPage: React.FC = () => {
               <ul>
                 {certificationsData.map((certification, index) => (
                   <li key={index}>
-                    {certification.name} - {certification.issuer} ({certification.year})
+                    {certification.name} ({certification.year}) from{" "}
+                    {certification.issuer}
                   </li>
                 ))}
               </ul>
@@ -174,13 +175,8 @@ const UserDetailPage: React.FC = () => {
           {activeTab === "linkedin" && (
             <div>
               <h3 className="font-bold mb-2">LinkedIn Profile</h3>
-              <a
-                href={linkedInProfile}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                {linkedInProfile}
+              <a href={linkedInProfile} target="_blank" rel="noopener noreferrer">
+                View LinkedIn Profile
               </a>
             </div>
           )}

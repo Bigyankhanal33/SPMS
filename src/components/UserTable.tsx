@@ -25,7 +25,7 @@ const UserTable: React.FC<UserTableProps> = ({ onUserHover }) => {
     fatherName: `Father ${index + 1}`,
     phone: `98072695${index + 20}`,
     email: `user${index + 1}@example.com`,
-    image: "https://via.placeholder.com/50", // Dummy image URL
+    image: `https://randomuser.me/api/portraits/men/${index + 1}.jpg`, // Unique dummy image URL
   }));
 
   return (
