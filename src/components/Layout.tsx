@@ -1,54 +1,79 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import {
+  Home,
+  Users,
+  Calendar,
+  Bell,
+  Clipboard,
+  Settings,
+  User,
+  LogOut,
+} from "lucide-react";
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout: React.FC = () => {
+  const location = useLocation();
+
+  // Map routes to header titles
+  const routeTitles: Record<string, string> = {
+    "/dashboard": "Dashboard",
+    "/meeting": "Meeting",
+    "/manageuser": "Manage User",
+    "/notice": "Notice",
+    "/result": "Result",
+    "/settings": "Settings",
+    "/portfolio": "Portfolio",
+  };
+
+  // Get the title based on the current route
+  const currentTitle = routeTitles[location.pathname] || "Welcome";
+
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-1/5 bg-[#EDF2F6] text-white flex flex-col">
-      
-        <div className="p-4 text-center font-bold text-xl ">
-        <img src="/logo.png"/>
-        
+      <aside className="w-1/6 bg-[#EDF2F6] text-blue-700 flex flex-col">
+        <div className="p-3 text-center font-bold text-xl">
+          <img src="/logo.png" alt="Logo" className="w-238 h-127" />
         </div>
-        <nav className="flex flex-col p-4 gap-4">
-          <Link to="/dashboard" className="hover:bg-blue-700 hover:text-white text-blue-700 text p-2 rounded">
-            Dashboard
+        <nav className="flex flex-col p-3 gap-3">
+          <Link to="/dashboard" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <Home className="w-5 h-5" /> Dashboard
           </Link>
-          <Link to="/manageuser" className="hover:bg-blue-700  hover:text-white text-blue-700 p-2 rounded">
-            Manage User
+          <Link to="/meeting" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <Calendar className="w-5 h-5" /> Meeting
           </Link>
-          <Link to="/settings" className="hover:bg-blue-700  hover:text-white text-blue-700 p-2 rounded">
-            Settings
+          <Link to="/manageuser" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <Users className="w-5 h-5" /> Manage User
           </Link>
-          <Link to="/" className="hover:bg-blue-700  hover:text-white text-blue-700 p-2 rounded">
-            Log Out
+          <Link to="/notice" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <Bell className="w-5 h-5" /> Notice
+          </Link>
+          <Link to="/result" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <Clipboard className="w-5 h-5" /> Result
+          </Link>
+          <Link to="/settings" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <Settings className="w-5 h-5" /> Settings
+          </Link>
+          <Link to="/portfolio" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
+            <User className="w-5 h-5" /> Portfolio
           </Link>
         </nav>
+        <div className="flex pl-3 align-middle">
+          <Link to="/" className="hover:bg-blue-700 flex hover:text-white text-blue-700 p-2 rounded">
+            <LogOut /> Log Out
+          </Link>
+        </div>
       </aside>
 
-      {/* Main Content */}
+      {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
-        {/* Header */}
+        {/* Header with dynamic title */}
         <header className="bg-white shadow-md p-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">Manage User</h1>
-          <div className="flex items-center space-x-4">
-            <button className="p-2 hover:bg-gray-200 rounded">
-              🔔 Notification
-            </button>
-            <div className="flex items-center space-x-2">
-              <img
-                src="https://via.placeholder.com/40"
-                alt="User"
-                className="rounded-full w-10 h-10"
-              />
-              <span>Username</span>
-            </div>
-          </div>
+          <h1 className="text-xl font-bold">{currentTitle}</h1>
         </header>
-
-        {/* Main Content Area */}
-        <main className="flex-1 p-4 overflow-y-auto">{children}</main>
+        <main className="flex-1 p-4 overflow-y-auto">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
