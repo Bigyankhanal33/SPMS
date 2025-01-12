@@ -18,27 +18,20 @@ const Login: React.FC = () => {
       className="flex items-center justify-center min-h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: `url(${ll})` }}
     >
-  
-
-      {/* Inner Content (scaled down further) */}
       <div className="transform scale-75 md:scale-85 flex flex-col items-center w-full">
-        {/* Slogan Section */}
         <div className="w-full flex justify-center mb-5 px-4">
           <div className="mx-auto text-[#F7C042] text-3xl md:text-[64px] font-bold text-center">
             "कडा अनुशासन, स्तरीय शिक्षा"
           </div>
         </div>
 
-        {/* Login Card */}
         <div className="bg-[#307AA8] shadow-2xl mt-16 py-10 px-6 md:px-[69px] rounded-lg w-full max-w-md md:max-w-[610px]">
           <div className="text-center flex justify-start items-center gap-6 md:gap-[44px]">
             <img src={Logo} alt="Logo" className="h-[80px] w-[80px] md:h-[130px] md:w-[133px]" />
-            <h2 className="text-2xl md:text-4xl font-bold text-white">Sign in</h2>
+            <h2 className="text-2xl md:text-4xl font-bold font-roboto  text-white">Sign in</h2>
           </div>
 
-          {/* Form Section */}
-          <form className="mt-6"onSubmit={handleLogin}>
-            {/* Username Input */}
+          <form className="mt-6" onSubmit={handleLogin}>
             <div className="mb-4">
               <label htmlFor="username" className="block text-lg md:text-[22px] text-white mb-1">
                 Username
@@ -56,7 +49,6 @@ const Login: React.FC = () => {
               </div>
             </div>
 
-            {/* Password Input */}
             <div className="mb-4">
               <label htmlFor="password" className="block text-lg md:text-[22px] text-white mb-1">
                 Password
@@ -74,22 +66,19 @@ const Login: React.FC = () => {
               </div>
             </div>
 
-            {/* Forgot Password Link */}
             <div className="text-right mb-4">
               <a href="/forgot-password" className="text-lg md:text-[24px] text-[#F7C042] underline">
                 Forgot Password?
               </a>
             </div>
 
-            {/* Log In Button */}
             <div className="w-full flex justify-center">
-             
-            <button
+              <button
                 type="submit"
                 className="w-full md:w-[270px] h-[50px] md:h-[70px] text-[#3279A5] bg-white rounded-lg text-lg md:text-[24px] font-bold"
               >
                 Log In
-              </button> 
+              </button>
             </div>
           </form>
         </div>

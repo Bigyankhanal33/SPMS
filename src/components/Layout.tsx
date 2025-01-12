@@ -66,12 +66,29 @@ const Layout: React.FC = () => {
       </aside>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col ">
         {/* Header with dynamic title */}
-        <header className="bg-white shadow-md p-4 flex justify-between items-center">
+        <header className="bg-[#EDF2F6] shadow-md p-4 flex justify-between items-center">
           <h1 className="text-xl font-bold">{currentTitle}</h1>
+          <div className="flex items-center gap-4">
+            <button className="relative">
+              <Bell className="w-6 h-6 text-gray-700" />
+              <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+            </button>
+            <div className="flex items-center gap-2">
+              <img
+                src="/public/Who_edited.jpg"
+                alt="Admin Avatar"
+                className="w-8 h-8 rounded-full border border-gray-300"
+              />
+              <span className="text-gray-700 font-medium">Admin</span>
+            </div>
+            <Link to="/settings">
+              <Settings className="w-6 h-6 text-gray-700" />
+            </Link>
+          </div>
         </header>
-        <main className="flex-1 p-4 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto">
           <Outlet />
         </main>
       </div>

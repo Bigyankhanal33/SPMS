@@ -23,8 +23,8 @@ const UserTable: React.FC<UserTableProps> = ({ onUserHover }) => {
     id: index + 1,
     name: `User ${index + 1}`,
     role: index % 2 === 0 ? "student" : "teacher", // Alternate between student and teacher
-    faculty: `Faculty ${index + 1}`,
-    fatherName: `Father Name ${index + 1}`,
+    faculty: `Management ${index + 1}`,
+    fatherName: `Father ${index + 1}`,
     phone: `98072695${index + 10}`,
     email: `user${index + 1}@example.com`,
     image: index % 2 === 0 

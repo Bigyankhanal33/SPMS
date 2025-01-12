@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 interface User {
   id: number;
   name: string;
+  role: "student" | "teacher"; // Added role field
   faculty: string;
   fatherName: string;
   phone: string;
@@ -18,6 +19,7 @@ const UserDetailPage: React.FC = () => {
   const users: User[] = [...Array(10)].map((_, index) => ({
     id: index + 1,
     name: `User ${index + 1}`,
+    role: index % 2 === 0 ? "student" : "teacher", // Alternating roles
     faculty: `Faculty ${index + 1}`,
     fatherName: `Father Name ${index + 1}`,
     phone: `98072695${index + 10}`,
@@ -37,11 +39,11 @@ const UserDetailPage: React.FC = () => {
 
   // Dummy data for each tab
   const academicData = {
-    course: "BCA",
+    course: "BIM",
     gpa: 4.0,
     joined: 2017,
     ended: 2022,
-    semester: "6th",
+    semester: "8th",
     scholarship: "Gold",
   };
 
@@ -84,6 +86,9 @@ const UserDetailPage: React.FC = () => {
           </p>
           <p>
             <strong>Faculty:</strong> {user.faculty}
+          </p>
+          <p>
+            <strong>Role:</strong> {user.role.charAt(0).toUpperCase() + user.role.slice(1)} {/* Display the role */}
           </p>
         </div>
       </div>
