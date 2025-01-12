@@ -3,9 +3,14 @@ import Logo from '../assets/LoginPage/Logo.png';
 import ll from '../assets/LoginPage/ll.png';
 import L2 from '../assets/LoginPage/L2.png';
 import L3 from '../assets/LoginPage/L3.png';
-
+import { useNavigate } from "react-router-dom";
 const Login: React.FC = () => {
-  return (
+  const navigate = useNavigate();
+  const handleLogin = (event: React.FormEvent) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    navigate('/admin/manageuser'); // Redirect to the ManageUser page
+  };
+  return (///////
     <div
       className="flex items-center justify-center min-h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: `url(${ll})` }}
@@ -29,7 +34,7 @@ const Login: React.FC = () => {
           </div>
 
           {/* Form Section */}
-          <form className="mt-6">
+          <form className="mt-6"onSubmit={handleLogin}>
             {/* Username Input */}
             <div className="mb-4">
               <label htmlFor="username" className="block text-lg md:text-[22px] text-white mb-1">
@@ -75,12 +80,13 @@ const Login: React.FC = () => {
 
             {/* Log In Button */}
             <div className="w-full flex justify-center">
-              <button
+             
+            <button
                 type="submit"
                 className="w-full md:w-[270px] h-[50px] md:h-[70px] text-[#3279A5] bg-white rounded-lg text-lg md:text-[24px] font-bold"
               >
                 Log In
-              </button>
+              </button> 
             </div>
           </form>
         </div>
