@@ -36,28 +36,63 @@ const Layout: React.FC = () => {
           <img src="/logo.png" alt="Logo" className="w-238 h-127" />
         </div>
         <nav className="flex flex-col p-3 gap-3">
-          <Link to="/dashboard" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <Home className="w-5 h-5" /> Dashboard
-          </Link>
-          <Link to="/meeting" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <Calendar className="w-5 h-5" /> Meeting
-          </Link>
-          <Link to="/manageuser" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <Users className="w-5 h-5" /> Manage User
-          </Link>
-          <Link to="/notice" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <Bell className="w-5 h-5" /> Notice
-          </Link>
-          <Link to="/result" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <Clipboard className="w-5 h-5" /> Result
-          </Link>
-          <Link to="/settings" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <Settings className="w-5 h-5" /> Settings
-          </Link>
-          <Link to="/portfolio" className="flex items-center gap-2 p-2 rounded hover:bg-blue-700 hover:text-white text-blue-700">
-            <User className="w-5 h-5" /> Portfolio
-          </Link>
-        </nav>
+  <Link
+    to="/dashboard"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/dashboard" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <Home className="w-5 h-5" /> Dashboard
+  </Link>
+  <Link
+    to="/meeting"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/meeting" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <Calendar className="w-5 h-5" /> Meeting
+  </Link>
+  <Link
+    to="/manageuser"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/manageuser" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <Users className="w-5 h-5" /> Manage User
+  </Link>
+  <Link
+    to="/notice"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/notice" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <Bell className="w-5 h-5" /> Notice
+  </Link>
+  <Link
+    to="/result"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/result" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <Clipboard className="w-5 h-5" /> Result
+  </Link>
+  <Link
+    to="/settings"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/settings" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <Settings className="w-5 h-5" /> Settings
+  </Link>
+  <Link
+    to="/portfolio"
+    className={`flex items-center gap-2 p-2 rounded ${
+      location.pathname === "/portfolio" ? "bg-[#2475A5] text-white" : "hover:bg-blue-700 hover:text-white text-blue-700"
+    }`}
+  >
+    <User className="w-5 h-5" /> Portfolio
+  </Link>
+</nav>
         <div className="flex pl-3 align-middle">
           <Link to="/" className="hover:bg-blue-700 flex hover:text-white text-blue-700 p-2 rounded">
             <LogOut /> Log Out
@@ -73,7 +108,7 @@ const Layout: React.FC = () => {
           <div className="flex items-center gap-4">
             <button className="relative">
               <Bell className="w-6 h-6 text-gray-700" />
-              <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+              <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 text-white text-xs rounded-full flex items-center justify-center"></span>
             </button>
             <div className="flex items-center gap-2">
               <img

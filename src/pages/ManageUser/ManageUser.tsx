@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UserTable from "../components/UserTable";
-import UserDetails from "../components/UserDetails";
+import UserTable from "../../components/ManageUser/UserTable";
+import UserDetails from "../../components/ManageUser/UserDetails";
 
 interface User {
   id: number;

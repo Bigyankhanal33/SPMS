@@ -14,6 +14,7 @@ export default {
         'custom-36': '36px',
         'custom-28':'28px',
         'custom-18':'18px',
+      
         'custom-btn':'20px',
 
       },
